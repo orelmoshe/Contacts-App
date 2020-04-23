@@ -1,0 +1,11 @@
+<div class="app-contacts">
+  <div class="buttons-container">
+    <button mat-button class="button" (click)="deleteContacts()">Delete</button>
+    <button mat-button class="button" (click)="addNewContact()">Add</button>
+  </div>
+
+  <div class="contact-container">
+    <app-header (onFilterEvent)="getValueFromSearch($event)"></app-header>
+    <app-item-list [filterValue]="searchValue"></app-item-list>
+  </div>
+</div>

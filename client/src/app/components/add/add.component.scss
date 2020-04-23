@@ -1,0 +1,83 @@
+$tablet: 768px;
+
+.app-add {
+  height: calc(500px - 1px - 1px);
+  width: calc(1000px - 1px - 1px);
+  display: flex;
+  margin-top: 70px;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+
+  .img-container {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+    }
+  }
+
+  .details-container {
+    height: calc(100% - 20px -20px);
+    width: calc(50% - 20px -20px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .example-form {
+      min-width: 150px;
+      max-width: 500px;
+      width: 100%;
+
+      .example-full-width {
+        width: 100%;
+      }
+
+      .example-section {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        height: 60px;
+      }
+
+      .example-chip-list {
+        width: 100%;
+      }
+
+      .massage-error-container {
+        height: 20px;
+        width: fit-content;
+      }
+    }
+
+    .wrapper-buttons {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+
+      .mat-flat-button {
+        height: 50px;
+        width: 48%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: #1e90ff;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .app-add {
+    width: calc(100% - 20px - 20px - 1px - 1px);
+    padding: 0 20px;
+  }
+}

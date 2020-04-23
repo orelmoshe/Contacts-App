@@ -1,0 +1,36 @@
+table {
+  width: 100%;
+  box-shadow: none;
+}
+
+tr.mat-row {
+  border-bottom: none;
+}
+
+.picture-contact {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.is-active {
+  color: green;
+}
+
+.is-inactive {
+  color: red;
+}
+
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: #1e90ff !important;
+}
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+  background-color: #1e90ff !important;
+}
+
+.edit-icon {
+  opacity: 0.4;
+  cursor: pointer;
+}

@@ -1,0 +1,30 @@
+CREATE TABLE person (
+   id serial PRIMARY KEY,
+   full_name VARCHAR (100) NOT NULL,
+   telephone VARCHAR (20) NOT NULL,
+   picture VARCHAR (10000) NOT NULL,
+   is_active Boolean NOT NULL
+);
+
+INSERT INTO person (full_name, telephone, picture, is_active) VALUES ('Orel Moshe','+972544862594','https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRQ8xzdv564ewROcTBYDdv51oTD5SgNOCDDwMw4XXIdvxFGyQzn',true);
+INSERT INTO person (full_name, telephone, picture, is_active) VALUES ('Daniel Eliyahu','+972544862595','https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRQ8xzdv564ewROcTBYDdv51oTD5SgNOCDDwMw4XXIdvxFGyQzn',true);
+INSERT INTO person (full_name, telephone, picture, is_active) VALUES ('Sergei Barats','+972544862596','https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRQ8xzdv564ewROcTBYDdv51oTD5SgNOCDDwMw4XXIdvxFGyQzn',true);
+
+CREATE TABLE roles (
+   role_name VARCHAR (100) PRIMARY KEY
+);
+
+INSERT INTO roles (role_name) VALUES ('Full Stack Developer');
+INSERT INTO roles (role_name) VALUES ('Backend Developer');
+INSERT INTO roles (role_name) VALUES ('Frontend Developer');
+
+CREATE TABLE person_in_roles (
+   id INTEGER REFERENCES person(id),
+   role_name VARCHAR (100) REFERENCES roles(role_name),
+   PRIMARY KEY (id,role_name)
+);
+
+INSERT INTO person_in_roles (id,role_name) VALUES (1,'Full Stack Developer');
+INSERT INTO person_in_roles (id,role_name) VALUES (1,'Backend Developer');
+INSERT INTO person_in_roles (id,role_name) VALUES (2,'Backend Developer');
+INSERT INTO person_in_roles (id,role_name) VALUES (3,'Frontend Developer');

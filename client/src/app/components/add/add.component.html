@@ -1,0 +1,57 @@
+<div class="app-add">
+
+  <div class="details-container">
+
+    <h2>{{title}}</h2>
+
+    <form [formGroup]="formData" (ngSubmit)="onSubmit()" class="example-form">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Full Name*</mat-label>
+        <input matInput placeholder="Ex. Israel Israeli" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Telephone*</mat-label>
+        <input type="tel" matInput placeholder="+972-544-222-222" formControlName="telephone" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Picture</mat-label>
+        <input matInput placeholder="Ex. www.google.com/example.jpg" formControlName="picture" />
+      </mat-form-field>
+
+      <mat-form-field class="example-chip-list">
+        <mat-chip-list #chipList aria-label="Roles selection">
+          <mat-chip *ngFor="let role of roles" [selectable]="selectable" [removable]="removable"  (removed)="remove(role)" >
+            {{ role }}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="New role..." [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"  [matChipInputAddOnBlur]="addOnBlur"  (matChipInputTokenEnd)="add($event)"/>
+        </mat-chip-list>
+      </mat-form-field>
+
+      <section class="example-section">
+        <mat-slide-toggle formControlName="isActive"> isActive </mat-slide-toggle>
+      </section>
+
+      <div class="massage-error-container">
+        <mat-error *ngIf="isError">
+          {{massageError()}}
+          </mat-error>
+      </div>
+
+      <div class="wrapper-buttons">
+        <button mat-flat-button (click)="navigatedBack()">BACK</button>
+        <button  mat-flat-button >Submit</button>
+      </div>
+
+    </form>
+
+  </div>
+
+  <div class="img-container">
+    <img src="{{getPictureValue()}}" alt="picture" />
+  </div>
+  
+</div>

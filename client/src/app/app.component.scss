@@ -1,0 +1,21 @@
+$tablet: 768px; 
+$desktop: 1024px;
+
+.app-components {
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: $desktop) {
+  .app-components {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: $tablet) {
+  .app-components {
+    width: calc(100% - 20px - 20px);
+    padding: 0 20px;
+  }
+}

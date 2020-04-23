@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+  // background-color: #f5f8fd;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	height: 5px;
+}
+
+::-webkit-scrollbar-track {
+	border: none;
+	border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 3px;
+	background-color: #b7b5b5;
+}
